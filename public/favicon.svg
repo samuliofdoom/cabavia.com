@@ -1,0 +1,21 @@
+<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Solid background for the favicon so it pops on light or dark browser tabs -->
+  <rect width="32" height="32" rx="8" fill="#0a0a0a" />
+  
+  <!-- The Data Nodes -->
+  <path d="M16 6 L26 12 L26 22 L16 28 L6 22 L6 12 Z" stroke="url(#logo-grad)" strokeWidth="3" strokeLinejoin="round" />
+  
+  <!-- Inner structure forming an abstract 'C' and 'A' -->
+  <path d="M16 12 L10 16 L16 20" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+  <path d="M22 16 L16 20 L16 28" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+  
+  <!-- Center hot-node -->
+  <circle cx="16" cy="20" r="2.5" fill="#00f0ff" />
+  
+  <defs>
+    <linearGradient id="logo-grad" x1="6" y1="6" x2="26" y2="28" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#00f0ff" />
+      <stop offset="100%" stopColor="#b026ff" />
+    </linearGradient>
+  </defs>
+</svg>
