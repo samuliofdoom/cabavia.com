@@ -101,8 +101,8 @@ export default function DashboundSection() {
                 {/* Status Panels */}
                 <div className={`absolute bottom-4 right-4 p-3 bg-[#050505]/80 backdrop-blur-xl border border-white/5 rounded-lg w-40 transition-all duration-500 delay-300 shadow-xl ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>
                   <div className="flex justify-between text-[10px] text-gray-400 font-mono mb-2">
-                    <span>EFFICIENCY</span>
-                    <span className="text-white">98.2%</span>
+                    <span>PILOT EFFICIENCY</span>
+                    <span className="text-white">~98%</span>
                   </div>
                   <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
                     <div className="w-[98%] h-full bg-cyber-blue shadow-[0_0_10px_rgba(0,240,255,0.5)]"></div>
@@ -114,7 +114,7 @@ export default function DashboundSection() {
                   <div className="text-white">&gt; init route_engine</div>
                   <div className="animate-pulse delay-100">&gt; optimizing_nodes...</div>
                   <div className="delay-200 text-cyber-blue">&gt; vehicle v-293 rerouted</div>
-                  <div className="delay-300 text-neon-purple">&gt; idle_time: 0ms</div>
+                  <div className="delay-300 text-neon-purple">&gt; idle_time: minimized</div>
                 </div>
 
               </div>
@@ -137,14 +137,14 @@ export default function DashboundSection() {
               </h2>
               
               <p className="text-xl text-gray-400 font-body leading-relaxed max-w-xl">
-                Perfectly orchestrated fleet logistics. Zero idle time. Zero empty legs. A centralized command center that predicts where your vehicles need to be before they get there.
+                Fleet logistics from one command layer. Lower idle time, fewer empty legs, and better placement decisions before demand peaks.
               </p>
               
               <div className="mt-8 space-y-6">
                 {/* Feature List */}
                 {[
-                  { title: "Node Optimization", desc: "Automated routing algorithms reduce empty mileage by 40%." },
-                  { title: "Real-time Tracking", desc: "Sub-second latency updates on vehicle positioning and ETA." }
+                  { title: "Node Optimization", desc: "Automated routing algorithms target lower empty mileage in pilot operations." },
+                  { title: "Real-time Tracking", desc: "Low-latency updates on vehicle positioning and ETA." }
                 ].map((feature, idx) => (
                   <div key={idx} className="flex gap-4 items-start">
                     <div className="flex-shrink-0 mt-1">

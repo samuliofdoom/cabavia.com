@@ -5,13 +5,13 @@ const capabilities = [
   {
     icon: LineChart,
     title: 'Predictive Demand Models',
-    text: 'Utilizing historic flight data and weather APIs to forecast fleet requirements 48 hours in advance.',
+    text: 'Utilizing historic flight data and weather APIs to forecast fleet requirements up to 48 hours ahead.',
     delay: 'delay-100'
   },
   {
     icon: Cpu,
     title: 'Dynamic Yield Engine',
-    text: 'Algorithmic surge pricing that updates every 60 seconds based on localized saturation.',
+    text: 'Algorithmic surge pricing that updates continuously as localized saturation changes.',
     delay: 'delay-300'
   },
   {

@@ -29,7 +29,7 @@ export default function GateboundSection() {
               </h2>
               
               <p className="text-xl text-gray-400 font-body leading-relaxed max-w-xl">
-                Maximize margin on every transfer. Our AI-driven dynamic pricing engine adjusts instantly based on real-time flight data, local demand clusters, and your fleet availability.
+                Improve margin on every transfer. Our dynamic pricing engine updates continuously from flight signals, local demand clusters, and fleet availability.
               </p>
               
               <div className="mt-8 flex items-center gap-4">
@@ -179,12 +179,12 @@ export default function GateboundSection() {
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-neon-purple to-transparent opacity-70"></div>
                   
                   <div className="flex justify-between items-start mb-2">
-                    <div className="text-xs font-mono tracking-widest text-gray-400 uppercase">Live Surge</div>
+                    <div className="text-xs font-mono tracking-widest text-gray-400 uppercase">Sample Surge</div>
                     <div className="px-2 py-0.5 rounded-full bg-neon-purple/20 border border-neon-purple/30 text-[9px] text-neon-purple font-bold">ACTIVE</div>
                   </div>
                   <div className="flex items-end gap-2">
                     <div className="text-4xl font-display font-bold text-white tracking-tight drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]">
-                      2.4x
+                      2.1x
                     </div>
                     <div className="text-neon-purple text-xl animate-bounce mb-1 drop-shadow-[0_0_8px_rgba(176,38,255,0.8)]">↑</div>
                   </div>
@@ -217,12 +217,13 @@ export default function GateboundSection() {
                     <pre className="text-gray-300">
 {`{
   `}<span className="text-cyber-blue">"endpoint"</span>{`: `}<span className="text-green-400">"/v1/yield/surge"</span>{`,
+  `}<span className="text-cyber-blue">"mode"</span>{`: `}<span className="text-green-400">"sample"</span>{`,
   `}<span className="text-cyber-blue">"flight_id"</span>{`: `}<span className="text-green-400">"AF458"</span>{`,
   `}<span className="text-cyber-blue">"pax_influx"</span>{`: `}<span className="text-neon-purple">350</span>{`,
   `}<span className="text-cyber-blue">"fleet_availability"</span>{`: `}<span className="text-neon-purple">0.12</span>{`,
-  `}<span className="text-cyber-blue">"recommended_surge"</span>{`: `}<span className="text-neon-purple">2.4</span>{`,
-  `}<span className="text-cyber-blue">"confidence_score"</span>{`: `}<span className="text-neon-purple">0.98</span>{`,
-  `}<span className="text-cyber-blue">"latency_ms"</span>{`: `}<span className="text-neon-purple">42</span>{`
+  `}<span className="text-cyber-blue">"recommended_surge"</span>{`: `}<span className="text-neon-purple">2.1</span>{`,
+  `}<span className="text-cyber-blue">"confidence_band"</span>{`: `}<span className="text-green-400">"high"</span>{`,
+  `}<span className="text-cyber-blue">"latency_band"</span>{`: `}<span className="text-green-400">"low"</span>{`
 }`}
                     </pre>
                   </div>
