@@ -44,11 +44,12 @@ After setup, every push to `master` deploys automatically.
 
 ## Production Checklist
 
-- Confirm custom domain DNS records point to Cloudflare Pages
+- Confirm Cloudflare Pages project uses `master` as production branch
+- Ensure `VITE_FORMSPREE_ENDPOINT` is set in Production and Preview env vars
+- Confirm custom domain DNS records point to this Cloudflare Pages project
 - Add `www` redirect strategy (`www -> apex` or `apex -> www`)
-- Verify Cloudflare Pages project uses `master` as production branch
-- Confirm preview deployments are enabled for PRs/feature branches
-- Validate all CTA links (`mailto`, waitlist, socials) are real and reachable
-- Ensure Formspree endpoint is set in production env vars
-- Confirm favicon and meta title/description for SEO/social sharing
-- Run a final smoke test on mobile + desktop after first production deploy
+- Verify direct route loads for `/privacy` and `/terms`
+- Validate primary CTA flow (`/#waitlist`) captures leads in Formspree
+- Confirm legal links resolve and copy is current
+- Confirm meta title/description/OG/Twitter tags with social preview check
+- Run final smoke test on mobile + desktop after production deploy
