@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, useAnimation, useAnimationFrame } from 'framer-motion';
-import { canSubmit, submitToFormspree, validateEmail } from '../lib/waitlist';
+import { canSubmit, isWaitlistHash, submitToFormspree, validateEmail } from '../lib/waitlist';
 
 // Physics parameters for the living orbs
 const ORBS = [
@@ -16,7 +16,9 @@ export default function Hero() {
   const [errorMessage, setErrorMessage] = useState('');
   const [honeypot, setHoneypot] = useState('');
   const [lastSubmittedAtMs, setLastSubmittedAtMs] = useState<number | null>(null);
+  const [waitlistHighlighted, setWaitlistHighlighted] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const waitlistRef = useRef<HTMLDivElement>(null);
   const cooldownMs = 8000;
   const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
   
@@ -36,6 +38,36 @@ export default function Hero() {
     
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  useEffect(() => {
+    let timeoutId: number | null = null;
+
+    const highlightWaitlist = () => {
+      const pathHash = `${window.location.pathname}${window.location.hash}`;
+      if (!isWaitlistHash(window.location.hash) && !isWaitlistHash(pathHash)) {
+        return;
+      }
+
+      setWaitlistHighlighted(true);
+      if (timeoutId !== null) {
+        window.clearTimeout(timeoutId);
+      }
+      timeoutId = window.setTimeout(() => {
+        setWaitlistHighlighted(false);
+      }, 2200);
+      waitlistRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    };
+
+    highlightWaitlist();
+    window.addEventListener('hashchange', highlightWaitlist);
+
+    return () => {
+      window.removeEventListener('hashchange', highlightWaitlist);
+      if (timeoutId !== null) {
+        window.clearTimeout(timeoutId);
+      }
+    };
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -130,7 +162,11 @@ export default function Hero() {
         </p>
 
         {/* CTA Form Placeholder */}
-        <div className="pt-6 sm:pt-8 opacity-0 animate-fade-in-up animation-delay-300 w-full max-w-md mx-auto px-4 sm:px-0">
+        <div
+          id="waitlist"
+          ref={waitlistRef}
+          className={`pt-6 sm:pt-8 opacity-0 animate-fade-in-up animation-delay-300 w-full max-w-md mx-auto px-4 sm:px-0 transition-all duration-500 ${waitlistHighlighted ? 'rounded-2xl ring-1 ring-cyber-blue/60 bg-cyber-blue/[0.03] shadow-[0_0_30px_rgba(0,240,255,0.25)]' : ''}`}
+        >
           <div className="relative group">
             {/* Animated border glow */}
             <div className="absolute -inset-0.5 bg-gradient-to-r from-cyber-blue to-neon-purple rounded-xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>

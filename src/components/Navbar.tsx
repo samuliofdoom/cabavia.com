@@ -85,9 +85,9 @@ const Navbar = () => {
 
         {/* Action Button */}
         <div className="hidden md:block relative z-10">
-          <button type="button" className="bg-white text-[#050505] hover:bg-cyber-blue font-display font-bold text-sm tracking-widest uppercase rounded-full px-6 py-2.5 shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(0,240,255,0.6)] transition-all duration-300 transform hover:-translate-y-0.5">
+          <a href="/#waitlist" className="inline-flex bg-white text-[#050505] hover:bg-cyber-blue font-display font-bold text-sm tracking-widest uppercase rounded-full px-6 py-2.5 shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(0,240,255,0.6)] transition-all duration-300 transform hover:-translate-y-0.5">
             Join Waitlist
-          </button>
+          </a>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -117,10 +117,14 @@ const Navbar = () => {
             {link.name}
           </a>
         ))}
-        <button 
+        <button
           type="button"
           className={`mt-8 bg-cyber-blue text-[#0a0a0a] font-display font-bold text-lg tracking-wide rounded-full px-10 py-4 shadow-[0_0_15px_rgba(0,240,255,0.5)] hover:shadow-[0_0_25px_rgba(0,240,255,0.8)] transition-all duration-300 ${mobileMenuOpen ? 'scale-100 opacity-100' : 'scale-90 opacity-0'}`}
           style={{ transitionDelay: '300ms' }}
+          onClick={() => {
+            setMobileMenuOpen(false);
+            window.location.href = '/#waitlist';
+          }}
         >
           JOIN WAITLIST
         </button>

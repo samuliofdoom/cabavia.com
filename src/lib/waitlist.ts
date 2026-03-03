@@ -31,6 +31,10 @@ export function canSubmit({
   return nowMs - lastSubmittedAtMs >= cooldownMs;
 }
 
+export function isWaitlistHash(hashLike: string): boolean {
+  return hashLike.trim().toLowerCase().endsWith('#waitlist');
+}
+
 export async function submitToFormspree({
   endpoint,
   email,

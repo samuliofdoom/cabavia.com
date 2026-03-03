@@ -1,6 +1,7 @@
 import { describe, expect, test, vi } from 'vitest';
 import {
   canSubmit,
+  isWaitlistHash,
   normalizeEmail,
   submitToFormspree,
   validateEmail,
@@ -26,6 +27,18 @@ describe('waitlist cooldown', () => {
   test('allows submissions after cooldown window', () => {
     expect(canSubmit({ lastSubmittedAtMs: 1000, nowMs: 9001, cooldownMs: 8000 })).toBe(true);
     expect(canSubmit({ lastSubmittedAtMs: null, nowMs: 100, cooldownMs: 8000 })).toBe(true);
+  });
+});
+
+describe('waitlist anchor helpers', () => {
+  test('matches waitlist hash formats', () => {
+    expect(isWaitlistHash('#waitlist')).toBe(true);
+    expect(isWaitlistHash('/#waitlist')).toBe(true);
+  });
+
+  test('rejects non-waitlist hashes', () => {
+    expect(isWaitlistHash('')).toBe(false);
+    expect(isWaitlistHash('#about')).toBe(false);
   });
 });
 

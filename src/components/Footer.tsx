@@ -51,7 +51,7 @@ const Footer = () => {
                 Join the early cohort shaping AI-native operations for ground mobility.
               </p>
               <a
-                href="mailto:hello@cabavia.com"
+                href="/#waitlist"
                 className="mt-5 inline-flex items-center justify-center rounded-full bg-white text-[#050505] px-5 py-2.5 font-display font-bold text-xs tracking-[0.14em] uppercase hover:bg-cyber-blue transition-colors"
               >
                 Join Waitlist
