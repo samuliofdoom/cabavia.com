@@ -63,7 +63,16 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-display font-semibold text-white">7. Contact</h2>
+              <h2 className="text-xl font-display font-semibold text-white">7. Governing law and venue</h2>
+              <p className="mt-3">
+                These Terms are governed by the laws applicable in the jurisdiction of CabAvia&apos;s principal place of business, without regard
+                to conflict-of-law principles. Disputes will be resolved in the competent courts of that jurisdiction unless otherwise required
+                by applicable law.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-display font-semibold text-white">8. Contact</h2>
               <p className="mt-3">
                 Questions about these terms can be sent to <a className="text-cyber-blue hover:text-white transition-colors" href="mailto:hello@cabavia.com">hello@cabavia.com</a>.
               </p>

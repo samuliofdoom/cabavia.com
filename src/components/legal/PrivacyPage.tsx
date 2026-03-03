@@ -49,7 +49,15 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-display font-semibold text-white">5. Security</h2>
+              <h2 className="text-xl font-display font-semibold text-white">5. Processors and subprocessors</h2>
+              <p className="mt-3">
+                We use third-party processors to operate CabAvia services. Current operational processors include Cloudflare (site hosting and
+                delivery) and Formspree (waitlist form processing). We review processors for security and contractual data protection terms.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-display font-semibold text-white">6. Security</h2>
               <p className="mt-3">
                 We use technical and organizational measures designed to protect personal information. No method of transmission or storage is
                 guaranteed to be fully secure.
@@ -57,7 +65,15 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-display font-semibold text-white">6. Your rights</h2>
+              <h2 className="text-xl font-display font-semibold text-white">7. International transfers</h2>
+              <p className="mt-3">
+                Depending on where providers process data, your information may be transferred across borders. Where required, we use
+                appropriate safeguards for international data transfers.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-display font-semibold text-white">8. Your rights</h2>
               <p className="mt-3">
                 Depending on your location, you may have rights to access, correct, delete, or restrict processing of your personal data. To
                 exercise these rights, contact us at hello@cabavia.com.
@@ -65,7 +81,7 @@ export default function PrivacyPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-display font-semibold text-white">7. Contact</h2>
+              <h2 className="text-xl font-display font-semibold text-white">9. Contact</h2>
               <p className="mt-3">
                 If you have questions about this policy, contact us at <a className="text-cyber-blue hover:text-white transition-colors" href="mailto:hello@cabavia.com">hello@cabavia.com</a>.
               </p>
