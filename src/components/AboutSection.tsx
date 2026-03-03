@@ -1,6 +1,8 @@
 import { ArrowRight } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
+const gcpServices = ['Cloud Run', 'Cloud SQL', 'BigQuery', 'Vertex AI', 'Cloud Storage', 'Cloud Monitoring'];
+
 export default function AboutSection() {
   const { ref, isVisible } = useScrollReveal(0.2);
 
@@ -59,6 +61,23 @@ export default function AboutSection() {
               <p className="text-gray-400 font-body text-lg md:text-xl leading-relaxed mb-10">
                 Founded by industry veterans who saw firsthand how manual dispatch and static pricing were destroying margins. We are backed by world-class infrastructure to bring airline-grade intelligence to every transfer operator.
               </p>
+
+              <div className="mb-10 rounded-2xl border border-cyber-blue/25 bg-cyber-blue/[0.04] p-5">
+                <p className="text-xs tracking-[0.18em] uppercase font-display font-semibold text-cyber-blue">Built on Google Cloud</p>
+                <p className="mt-2 text-sm text-white/70 font-body leading-relaxed">
+                  MVP stack designed for fast iteration with enterprise-grade reliability.
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {gcpServices.map((service) => (
+                    <span
+                      key={service}
+                      className="rounded-full border border-white/15 bg-white/[0.03] px-3 py-1 text-xs font-body tracking-wide text-white/80"
+                    >
+                      {service}
+                    </span>
+                  ))}
+                </div>
+              </div>
 
               <a 
                 href="mailto:hello@cabavia.com"
