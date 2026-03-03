@@ -4,7 +4,7 @@ import { Menu, X } from 'lucide-react';
 const navLinks = [
   { name: 'Yield Engine', href: '#gatebound' },
   { name: 'Dispatch', href: '#dashbound' },
-  { name: 'How it works', href: '#how-it-works' },
+  { name: 'How It Works', href: '#how-it-works' },
   { name: 'About Us', href: '#about' }
 ];
 

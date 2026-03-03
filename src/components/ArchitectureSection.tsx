@@ -42,7 +42,7 @@ export default function ArchitectureSection() {
         <div className={`text-center mb-20 md:mb-32 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="inline-flex items-center space-x-2 mb-6">
             <span className="w-8 h-px bg-cyber-blue/50"></span>
-            <h2 className="text-xs md:text-sm tracking-[0.2em] text-cyber-blue uppercase font-display font-semibold">How it works</h2>
+            <h2 className="text-xs md:text-sm tracking-[0.2em] text-cyber-blue uppercase font-display font-semibold">How It Works</h2>
             <span className="w-8 h-px bg-cyber-blue/50"></span>
           </div>
           <h3 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6 leading-tight break-words hyphens-auto">From demand signals <br className="block sm:hidden" />to dispatched rides</h3>

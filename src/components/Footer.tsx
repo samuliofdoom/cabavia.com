@@ -39,7 +39,7 @@ const Footer = () => {
             <ul className="space-y-3 font-body text-sm">
               <li><a href="/#gatebound" className="text-gray-400 hover:text-cyber-blue transition-colors">Yield Engine</a></li>
               <li><a href="/#dashbound" className="text-gray-400 hover:text-cyber-blue transition-colors">Dispatch</a></li>
-              <li><a href="/#how-it-works" className="text-gray-400 hover:text-cyber-blue transition-colors">How it works</a></li>
+              <li><a href="/#how-it-works" className="text-gray-400 hover:text-cyber-blue transition-colors">How It Works</a></li>
               <li><a href="/#about" className="text-gray-400 hover:text-cyber-blue transition-colors">About</a></li>
             </ul>
           </nav>
