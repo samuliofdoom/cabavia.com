@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, useAnimation, useAnimationFrame } from 'framer-motion';
+import { canSubmit, submitToFormspree, validateEmail } from '../lib/waitlist';
 
 // Physics parameters for the living orbs
 const ORBS = [
@@ -11,8 +12,13 @@ const ORBS = [
 
 export default function Hero() {
   const [email, setEmail] = useState('');
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [honeypot, setHoneypot] = useState('');
+  const [lastSubmittedAtMs, setLastSubmittedAtMs] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const cooldownMs = 8000;
+  const formspreeEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
   
   // Track mouse position for the repulsion effect
   const mousePos = useRef({ x: 0, y: 0 });
@@ -32,12 +38,49 @@ export default function Hero() {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const validation = validateEmail(email);
+    if (!validation.ok) {
+      setStatus('error');
+      setErrorMessage(validation.message);
+      return;
+    }
+
+    const nowMs = Date.now();
+    if (!canSubmit({ lastSubmittedAtMs, nowMs, cooldownMs })) {
+      setStatus('error');
+      setErrorMessage('Please wait a few seconds before submitting again.');
+      return;
+    }
+
+    if (!formspreeEndpoint) {
+      setStatus('error');
+      setErrorMessage('Waitlist is temporarily unavailable. Please email hello@cabavia.com.');
+      return;
+    }
+
     setStatus('loading');
-    setTimeout(() => {
+    setErrorMessage('');
+
+    const result = await submitToFormspree({
+      endpoint: formspreeEndpoint,
+      email: validation.value,
+      source: 'hero',
+      honeypot,
+    });
+
+    if (result.ok) {
       setStatus('success');
-    }, 1500);
+      setEmail('');
+      setHoneypot('');
+      setLastSubmittedAtMs(nowMs);
+      return;
+    }
+
+    setStatus('error');
+    setErrorMessage(result.message);
   };
 
   return (
@@ -95,6 +138,7 @@ export default function Hero() {
             {status === 'success' ? (
               <div className="relative flex items-center justify-center bg-[#050505] border border-cyber-blue/30 text-cyber-blue rounded-xl p-4 shadow-[0_0_20px_rgba(0,240,255,0.2)] backdrop-blur-xl animate-fade-in-up">
                 <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <title>Waitlist submission succeeded</title>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 <span className="font-display font-bold text-center">Thanks for joining the waitlist! We'll be in touch.</span>
@@ -104,6 +148,16 @@ export default function Hero() {
                 className="relative flex flex-col sm:flex-row items-center bg-[#050505] border border-white/10 group-focus-within:border-cyber-blue/50 rounded-xl p-1 shadow-2xl backdrop-blur-xl transition-all duration-300 group-focus-within:shadow-[0_0_30px_rgba(0,240,255,0.15)] gap-2 sm:gap-0"
                 onSubmit={handleSubmit}
               >
+                <input
+                  type="text"
+                  name="company_website"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  className="hidden"
+                  aria-hidden="true"
+                />
                 <input 
                   type="email" 
                   value={email}
@@ -121,6 +175,7 @@ export default function Hero() {
                   {status === 'loading' ? (
                     <>
                       <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-[#0a0a0a]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <title>Submitting waitlist request</title>
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                       </svg>
@@ -133,6 +188,10 @@ export default function Hero() {
               </form>
             )}
           </div>
+
+          {status === 'error' && errorMessage ? (
+            <p className="mt-4 text-xs text-red-400 font-body tracking-wide">{errorMessage}</p>
+          ) : null}
           
           <p className="text-xs text-gray-500 font-body mt-4 tracking-wide">
             Limited spots available for beta testing.

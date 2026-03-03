@@ -17,11 +17,16 @@ npm install
 npm run dev
 ```
 
+Before running the site with a working waitlist form, copy `.env.example` to `.env` and set:
+
+- `VITE_FORMSPREE_ENDPOINT` - your Formspree endpoint URL (for example `https://formspree.io/f/abc123xy`)
+
 Useful scripts:
 
 - `npm run build` - production build to `dist/`
 - `npm run lint` - run ESLint
 - `npm run preview` - preview production build locally
+- `npm test` - run Vitest tests
 
 ## Cloudflare Pages Deploy
 
@@ -44,6 +49,6 @@ After setup, every push to `master` deploys automatically.
 - Verify Cloudflare Pages project uses `master` as production branch
 - Confirm preview deployments are enabled for PRs/feature branches
 - Validate all CTA links (`mailto`, waitlist, socials) are real and reachable
-- Add legal pages or update footer copy once Privacy/Terms URLs exist
+- Ensure Formspree endpoint is set in production env vars
 - Confirm favicon and meta title/description for SEO/social sharing
 - Run a final smoke test on mobile + desktop after first production deploy
