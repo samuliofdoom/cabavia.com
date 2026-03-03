@@ -25,14 +25,22 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-display font-semibold text-white">2. Informational content</h2>
+              <h2 className="text-xl font-display font-semibold text-white">2. Acceptable use</h2>
+              <p className="mt-3">
+                You must not misuse this site, including by attempting unauthorized access, disrupting service operation, introducing malicious
+                code, scraping in violation of applicable law, or violating rights of CabAvia or third parties.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-display font-semibold text-white">3. Informational content</h2>
               <p className="mt-3">
                 Product descriptions and roadmap items on this site are for informational purposes and may change without notice.
               </p>
             </section>
 
             <section>
-              <h2 className="text-xl font-display font-semibold text-white">3. Intellectual property</h2>
+              <h2 className="text-xl font-display font-semibold text-white">4. Intellectual property</h2>
               <p className="mt-3">
                 All trademarks, branding, text, and design elements on this site are owned by CabAvia or its licensors and may not be used
                 without permission.
@@ -40,7 +48,15 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-display font-semibold text-white">4. Disclaimer</h2>
+              <h2 className="text-xl font-display font-semibold text-white">5. Privacy and data protection</h2>
+              <p className="mt-3">
+                Personal-data handling is described in our Privacy Policy. By using this site, you acknowledge that certain data processing is
+                required to provide site functionality and respond to your requests.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-display font-semibold text-white">6. Disclaimer</h2>
               <p className="mt-3">
                 This site is provided "as is" and "as available" without warranties of any kind, express or implied, to the fullest extent
                 permitted by law.
@@ -48,7 +64,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-display font-semibold text-white">5. Limitation of liability</h2>
+              <h2 className="text-xl font-display font-semibold text-white">7. Limitation of liability</h2>
               <p className="mt-3">
                 To the maximum extent permitted by law, CabAvia is not liable for indirect, incidental, special, consequential, or punitive
                 damages arising from use of this site.
@@ -56,23 +72,22 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-xl font-display font-semibold text-white">6. Changes</h2>
+              <h2 className="text-xl font-display font-semibold text-white">8. Changes</h2>
               <p className="mt-3">
                 We may update these Terms from time to time. Continued use of the site after updates means you accept the revised terms.
               </p>
             </section>
 
             <section>
-              <h2 className="text-xl font-display font-semibold text-white">7. Governing law and venue</h2>
+              <h2 className="text-xl font-display font-semibold text-white">9. Governing law and venue</h2>
               <p className="mt-3">
-                These Terms are governed by the laws applicable in the jurisdiction of CabAvia&apos;s principal place of business, without regard
-                to conflict-of-law principles. Disputes will be resolved in the competent courts of that jurisdiction unless otherwise required
-                by applicable law.
+                These Terms are governed by the laws of Finland, excluding conflict-of-law rules. Unless otherwise required by mandatory law,
+                disputes arising from these Terms are subject to the competent courts in Finland.
               </p>
             </section>
 
             <section>
-              <h2 className="text-xl font-display font-semibold text-white">8. Contact</h2>
+              <h2 className="text-xl font-display font-semibold text-white">10. Contact</h2>
               <p className="mt-3">
                 Questions about these terms can be sent to <a className="text-cyber-blue hover:text-white transition-colors" href="mailto:hello@cabavia.com">hello@cabavia.com</a>.
               </p>
