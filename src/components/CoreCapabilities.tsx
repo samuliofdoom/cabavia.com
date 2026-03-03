@@ -3,18 +3,21 @@ import { LineChart, Cpu, Network } from 'lucide-react';
 
 const capabilities = [
   {
+    id: 'predictive-demand-models',
     icon: LineChart,
     title: 'Predictive Demand Models',
     text: 'Utilizing historic flight data and weather APIs to forecast fleet requirements up to 48 hours ahead.',
     delay: 'delay-100'
   },
   {
+    id: 'dynamic-yield-engine',
     icon: Cpu,
     title: 'Dynamic Yield Engine',
     text: 'Algorithmic surge pricing that updates continuously as localized saturation changes.',
     delay: 'delay-300'
   },
   {
+    id: 'graph-based-routing',
     icon: Network,
     title: 'Graph-based Routing',
     text: 'Real-time dispatch optimization using advanced graph algorithms to minimize empty legs.',
@@ -36,11 +39,11 @@ export default function CoreCapabilities() {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 w-full">
-          {capabilities.map((cap, index) => {
+          {capabilities.map((cap) => {
             const Icon = cap.icon;
             return (
               <div 
-                key={index}
+                key={cap.id}
                 className={`flex flex-col items-start p-7 sm:p-10 rounded-2xl bg-[#111111] border border-white/5 border-t-cyber-blue/50 shadow-[0_0_30px_rgba(0,240,255,0.02)] transition-all duration-700 transform hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(0,240,255,0.05)] ${cap.delay} ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
                 }`}

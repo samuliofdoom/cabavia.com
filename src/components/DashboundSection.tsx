@@ -2,6 +2,18 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export default function DashboundSection() {
   const { ref, isVisible } = useScrollReveal();
+  const features = [
+    {
+      id: 'node-optimization',
+      title: 'Node Optimization',
+      desc: 'Automated routing algorithms target lower empty mileage in pilot operations.',
+    },
+    {
+      id: 'real-time-tracking',
+      title: 'Real-time Tracking',
+      desc: 'Low-latency updates on vehicle positioning and ETA.',
+    },
+  ];
 
   return (
     <section
@@ -24,7 +36,7 @@ export default function DashboundSection() {
               
               <div className="h-10 border-b border-white/5 flex items-center justify-between px-4 gap-2 bg-white/[0.01]">
                 <div className="text-[10px] text-gray-500 font-mono tracking-[0.2em] uppercase">
-                  Terminal // Dashbound
+                  Terminal / Dashbound
                 </div>
                 <div className="flex gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-white/20"></span>
@@ -40,6 +52,7 @@ export default function DashboundSection() {
                 
                 {/* SVG Connecting Lines & Map Background */}
                 <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 300" preserveAspectRatio="none">
+                  <title>Dashbound routing network visualization</title>
                   <defs>
                     <linearGradient id="line-glow-1" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%" stopColor="#00f0ff" stopOpacity="0.1" />
@@ -142,11 +155,8 @@ export default function DashboundSection() {
               
                <div className="mt-8 space-y-5 sm:space-y-6">
                 {/* Feature List */}
-                {[
-                  { title: "Node Optimization", desc: "Automated routing algorithms target lower empty mileage in pilot operations." },
-                  { title: "Real-time Tracking", desc: "Low-latency updates on vehicle positioning and ETA." }
-                ].map((feature, idx) => (
-                  <div key={idx} className="flex gap-4 items-start">
+                {features.map((feature) => (
+                  <div key={feature.id} className="flex gap-4 items-start">
                     <div className="flex-shrink-0 mt-1">
                       <div className="w-8 h-8 rounded-lg bg-cyber-blue/10 border border-cyber-blue/20 flex items-center justify-center backdrop-blur-sm">
                         <div className="w-2 h-2 bg-cyber-blue rounded-full shadow-[0_0_8px_rgba(0,240,255,0.8)]"></div>

@@ -94,6 +94,9 @@ const Navbar = () => {
         <button 
           type="button"
           className="md:hidden relative z-50 text-white p-2 focus:outline-none"
+          aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-navigation"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X size={24} className="text-cyber-blue" /> : <Menu size={24} />}
@@ -105,7 +108,10 @@ const Navbar = () => {
         fixed inset-0 bg-[#0a0a0a]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-6 px-6 pt-24 pb-10 overflow-y-auto
         transition-all duration-500 md:hidden z-40
         ${mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
-      `}>
+      `}
+      id="mobile-navigation"
+      aria-hidden={!mobileMenuOpen}
+      >
         {navLinks.map((link, i) => (
           <a 
             key={link.name} 

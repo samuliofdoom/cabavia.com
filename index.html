@@ -20,6 +20,23 @@
     <meta name="twitter:description" content="AI-first dispatch, pricing, and demand intelligence for modern transfer operators." />
     <meta name="twitter:image" content="https://cabavia.com/favicon.svg" />
 
+    <script>
+      (function () {
+        var origin = window.location.origin;
+        if (!origin.endsWith('.pages.dev')) {
+          return;
+        }
+        var canonical = document.querySelector('link[rel="canonical"]');
+        if (canonical) {
+          canonical.setAttribute('href', origin + '/');
+        }
+        var ogUrl = document.querySelector('meta[property="og:url"]');
+        if (ogUrl) {
+          ogUrl.setAttribute('content', origin + '/');
+        }
+      })();
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Syne:wght@400..800&display=swap" rel="stylesheet">

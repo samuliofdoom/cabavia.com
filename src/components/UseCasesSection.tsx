@@ -3,6 +3,7 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const useCases = [
   {
+    id: 'airport-transfer-fleets',
     title: 'Airport Transfer Fleets',
     description: 'Automate dispatch and meet-and-greet execution precisely synchronized with actual gate arrivals.',
     icon: Plane,
@@ -11,6 +12,7 @@ const useCases = [
     offset: 'lg:mt-0',
   },
   {
+    id: 'chauffeur-networks',
     title: 'Chauffeur Networks',
     description: 'Deliver white-glove consistency at scale, seamlessly managing complex multi-leg itineraries and VIP demands.',
     icon: Star,
@@ -19,6 +21,7 @@ const useCases = [
     offset: 'lg:mt-16',
   },
   {
+    id: 'corporate-shuttle-operators',
     title: 'Corporate Shuttle Operators',
     description: 'Optimize vehicle utilization and routing in real-time based on dynamic employee shift patterns and traffic conditions.',
     icon: Building2,
@@ -59,10 +62,10 @@ export default function UseCasesSection() {
 
         {/* Cards Grid / Staggered Layout */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {useCases.map((useCase, index) => (
+          {useCases.map((useCase) => (
             <div 
-              key={index}
-            className={`group relative p-6 sm:p-8 md:p-10 rounded-3xl bg-gradient-to-b from-[#111111] to-[#0a0a0a] border border-white/10 hover:border-white/20 transition-all duration-500 overflow-hidden flex flex-col justify-between min-h-[260px] sm:min-h-[320px] lg:min-h-[400px] mt-0 ${useCase.offset}`}
+              key={useCase.id}
+              className={`group relative p-6 sm:p-8 md:p-10 rounded-3xl bg-gradient-to-b from-[#111111] to-[#0a0a0a] border border-white/10 hover:border-white/20 transition-all duration-500 overflow-hidden flex flex-col justify-between min-h-[260px] sm:min-h-[320px] lg:min-h-[400px] mt-0 ${useCase.offset}`}
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(40px)',

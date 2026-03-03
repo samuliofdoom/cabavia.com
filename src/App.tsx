@@ -11,15 +11,16 @@ import AboutSection from './components/AboutSection';
 import CustomCursor from './components/CustomCursor';
 import PrivacyPage from './components/legal/PrivacyPage';
 import TermsPage from './components/legal/TermsPage';
+import { resolveStaticPage } from './lib/routes';
 
 function App() {
-  const path = window.location.pathname;
+  const staticPage = resolveStaticPage(window.location.pathname);
 
-  if (path === '/privacy') {
+  if (staticPage === 'privacy') {
     return <PrivacyPage />;
   }
 
-  if (path === '/terms') {
+  if (staticPage === 'terms') {
     return <TermsPage />;
   }
 
