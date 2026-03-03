@@ -37,10 +37,10 @@ const Footer = () => {
           <nav className="lg:col-span-3" aria-label="Footer">
             <h4 className="text-white/70 font-display font-bold tracking-[0.18em] text-xs uppercase mb-4">Product</h4>
             <ul className="space-y-3 font-body text-sm">
-              <li><a href="#gatebound" className="text-gray-400 hover:text-cyber-blue transition-colors">Yield Engine</a></li>
-              <li><a href="#dashbound" className="text-gray-400 hover:text-cyber-blue transition-colors">Dispatch</a></li>
-              <li><a href="#architecture" className="text-gray-400 hover:text-cyber-blue transition-colors">Infrastructure</a></li>
-              <li><a href="#about" className="text-gray-400 hover:text-cyber-blue transition-colors">About</a></li>
+              <li><a href="/#gatebound" className="text-gray-400 hover:text-cyber-blue transition-colors">Yield Engine</a></li>
+              <li><a href="/#dashbound" className="text-gray-400 hover:text-cyber-blue transition-colors">Dispatch</a></li>
+              <li><a href="/#architecture" className="text-gray-400 hover:text-cyber-blue transition-colors">Infrastructure</a></li>
+              <li><a href="/#about" className="text-gray-400 hover:text-cyber-blue transition-colors">About</a></li>
             </ul>
           </nav>
 
@@ -63,9 +63,9 @@ const Footer = () => {
         <div className="pt-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs font-body text-gray-500">
           <p>© 2026 CabAvia. All rights reserved.</p>
           <div className="flex items-center gap-5">
-            <span>Privacy available on request</span>
+            <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
             <span className="text-white/20">|</span>
-            <span>Terms available on request</span>
+            <a href="/terms" className="hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>

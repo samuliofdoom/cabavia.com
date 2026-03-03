@@ -9,8 +9,20 @@ import UseCasesSection from './components/UseCasesSection';
 import ArchitectureSection from './components/ArchitectureSection';
 import AboutSection from './components/AboutSection';
 import CustomCursor from './components/CustomCursor';
+import PrivacyPage from './components/legal/PrivacyPage';
+import TermsPage from './components/legal/TermsPage';
 
 function App() {
+  const path = window.location.pathname;
+
+  if (path === '/privacy') {
+    return <PrivacyPage />;
+  }
+
+  if (path === '/terms') {
+    return <TermsPage />;
+  }
+
   return (
     <div className="app-wrapper min-h-screen bg-[#0a0a0a] text-white font-body overflow-x-hidden relative selection:bg-cyber-blue selection:text-[#0a0a0a] flex flex-col">
       <CustomCursor />
