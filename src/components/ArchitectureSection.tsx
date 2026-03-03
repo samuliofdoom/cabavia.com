@@ -3,23 +3,27 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const nodes = [
   {
-    title: 'Ingestion',
-    desc: 'Live Flight APIs & Weather Data',
+    id: 'demand-signal',
+    title: 'Demand Signal',
+    desc: 'Bookings, traffic events, and route demand enter one live queue.',
     icon: Database,
   },
   {
-    title: 'Processing',
-    desc: 'Real-time Event Stream',
+    id: 'yield-recommendation',
+    title: 'Yield Recommendation',
+    desc: 'CabAvia ranks price and allocation choices per route and time window.',
     icon: Activity,
   },
   {
-    title: 'Intelligence',
-    desc: 'ML Yield & Demand Models',
+    id: 'dispatch-execution',
+    title: 'Dispatch Execution',
+    desc: 'The best run plan is sent to operations with driver and vehicle assignment.',
     icon: Brain,
   },
   {
-    title: 'Distribution',
-    desc: 'Global Dispatch Nodes',
+    id: 'feedback-loop',
+    title: 'Feedback Loop',
+    desc: 'Outcomes retrain recommendations so occupancy and response times keep improving.',
     icon: Share2,
   }
 ];
@@ -28,7 +32,7 @@ export default function ArchitectureSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="architecture" ref={ref} className="relative w-full py-24 md:py-32 overflow-hidden bg-[#0a0a0a]">
+    <section id="how-it-works" ref={ref} className="relative w-full py-24 md:py-32 overflow-hidden bg-[#0a0a0a]">
       {/* Subtle Background Elements */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-full max-h-[600px] bg-cyber-blue/5 rounded-full blur-[120px] pointer-events-none"></div>
@@ -38,12 +42,12 @@ export default function ArchitectureSection() {
         <div className={`text-center mb-20 md:mb-32 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="inline-flex items-center space-x-2 mb-6">
             <span className="w-8 h-px bg-cyber-blue/50"></span>
-            <h2 className="text-xs md:text-sm tracking-[0.2em] text-cyber-blue uppercase font-display font-semibold">Data Pipeline</h2>
+            <h2 className="text-xs md:text-sm tracking-[0.2em] text-cyber-blue uppercase font-display font-semibold">How it works</h2>
             <span className="w-8 h-px bg-cyber-blue/50"></span>
           </div>
-          <h3 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6 leading-tight break-words hyphens-auto">Infrastructure / <br className="block sm:hidden" />Cloud Native</h3>
+          <h3 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6 leading-tight break-words hyphens-auto">From demand signals <br className="block sm:hidden" />to dispatched rides</h3>
           <p className="text-gray-400 max-w-2xl mx-auto font-body text-base md:text-lg">
-            Our enterprise-grade architecture processes millions of data points in real-time, leveraging distributed cloud nodes to optimize fleet deployment instantly.
+            CabAvia turns live demand into pricing and dispatch decisions your team can execute in minutes, then learns from each run to tighten margins and service reliability.
           </p>
         </div>
 
@@ -76,7 +80,7 @@ export default function ArchitectureSection() {
               const Icon = node.icon;
               return (
                 <div 
-                  key={i} 
+                  key={node.id} 
                   className={`flex flex-col relative transition-all duration-700 ease-out`}
                   style={{ 
                     opacity: isVisible ? 1 : 0, 

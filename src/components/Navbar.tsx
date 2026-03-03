@@ -4,7 +4,7 @@ import { Menu, X } from 'lucide-react';
 const navLinks = [
   { name: 'Yield Engine', href: '#gatebound' },
   { name: 'Dispatch', href: '#dashbound' },
-  { name: 'Infrastructure', href: '#architecture' },
+  { name: 'How it works', href: '#how-it-works' },
   { name: 'About Us', href: '#about' }
 ];
 
@@ -41,6 +41,7 @@ const Navbar = () => {
             <div className="absolute inset-0 bg-cyber-blue/20 blur-md rounded-full group-hover:bg-neon-purple/30 transition-colors duration-500"></div>
             
             <svg viewBox="0 0 32 32" className="w-8 h-8 relative z-10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <title>CabAvia logo</title>
               {/* Outer connection ring */}
               <circle cx="16" cy="16" r="14" stroke="currentColor" strokeWidth="1" className="text-white/20 stroke-dasharray-[2_4] animate-[spin_10s_linear_infinite]" />
               
@@ -84,13 +85,14 @@ const Navbar = () => {
 
         {/* Action Button */}
         <div className="hidden md:block relative z-10">
-          <button className="bg-white text-[#050505] hover:bg-cyber-blue font-display font-bold text-sm tracking-widest uppercase rounded-full px-6 py-2.5 shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(0,240,255,0.6)] transition-all duration-300 transform hover:-translate-y-0.5">
+          <button type="button" className="bg-white text-[#050505] hover:bg-cyber-blue font-display font-bold text-sm tracking-widest uppercase rounded-full px-6 py-2.5 shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(0,240,255,0.6)] transition-all duration-300 transform hover:-translate-y-0.5">
             Join Waitlist
           </button>
         </div>
 
         {/* Mobile Menu Toggle */}
         <button 
+          type="button"
           className="md:hidden relative z-50 text-white p-2 focus:outline-none"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
@@ -116,6 +118,7 @@ const Navbar = () => {
           </a>
         ))}
         <button 
+          type="button"
           className={`mt-8 bg-cyber-blue text-[#0a0a0a] font-display font-bold text-lg tracking-wide rounded-full px-10 py-4 shadow-[0_0_15px_rgba(0,240,255,0.5)] hover:shadow-[0_0_25px_rgba(0,240,255,0.8)] transition-all duration-300 ${mobileMenuOpen ? 'scale-100 opacity-100' : 'scale-90 opacity-0'}`}
           style={{ transitionDelay: '300ms' }}
         >
