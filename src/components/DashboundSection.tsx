@@ -4,13 +4,13 @@ export default function DashboundSection() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section 
+    <section
       id="dashbound"
       ref={ref} 
-      className="relative w-full py-24 md:py-32 overflow-hidden bg-[radial-gradient(ellipse_at_bottom,rgba(0,240,255,0.03)_0%,rgba(10,10,10,1)_100%)]"
+      className="relative w-full py-20 sm:py-24 md:py-32 overflow-hidden bg-[radial-gradient(ellipse_at_bottom,rgba(0,240,255,0.03)_0%,rgba(10,10,10,1)_100%)]"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex flex-col-reverse lg:flex-row items-center gap-16 lg:gap-24">
+        <div className="flex flex-col-reverse lg:flex-row items-center gap-12 sm:gap-16 lg:gap-24">
           
           {/* Left Visual / Dashboard Mockup */}
           <div className={`w-full lg:w-1/2 relative transition-all duration-700 delay-150 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
@@ -99,7 +99,7 @@ export default function DashboundSection() {
                 </div>
 
                 {/* Status Panels */}
-                <div className={`absolute bottom-4 right-4 p-3 bg-[#050505]/80 backdrop-blur-xl border border-white/5 rounded-lg w-40 transition-all duration-500 delay-300 shadow-xl ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>
+                <div className={`absolute bottom-3 right-3 sm:bottom-4 sm:right-4 p-2.5 sm:p-3 bg-[#050505]/80 backdrop-blur-xl border border-white/5 rounded-lg w-32 sm:w-40 transition-all duration-500 delay-300 shadow-xl ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4'}`}>
                   <div className="flex justify-between text-[10px] text-gray-400 font-mono mb-2">
                     <span>PILOT EFFICIENCY</span>
                     <span className="text-white">~98%</span>
@@ -110,7 +110,7 @@ export default function DashboundSection() {
                 </div>
 
                 {/* CLI Text Overlay */}
-                <div className="absolute top-4 left-4 font-mono text-[10px] text-gray-400 leading-relaxed max-w-[200px] bg-[#050505]/40 backdrop-blur-md p-3 rounded border border-white/5">
+                <div className="absolute top-3 left-3 sm:top-4 sm:left-4 font-mono text-[9px] sm:text-[10px] text-gray-400 leading-relaxed max-w-[160px] sm:max-w-[200px] bg-[#050505]/40 backdrop-blur-md p-2 sm:p-3 rounded border border-white/5">
                   <div className="text-white">&gt; init route_engine</div>
                   <div className="animate-pulse delay-100">&gt; optimizing_nodes...</div>
                   <div className="delay-200 text-cyber-blue">&gt; vehicle v-293 rerouted</div>
@@ -132,15 +132,15 @@ export default function DashboundSection() {
                 </span>
               </div>
               
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-5xl font-display font-extrabold tracking-tighter text-white mb-6">
+              <h2 className="text-3xl sm:text-5xl lg:text-6xl xl:text-5xl font-display font-extrabold tracking-tight sm:tracking-tighter text-white mb-6">
                 Command with <br className="block sm:hidden xl:block" /><span className="bg-gradient-to-l from-cyber-blue to-neon-purple bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,240,255,0.2)] whitespace-nowrap">Dashbound.</span>
               </h2>
               
-              <p className="text-xl text-gray-400 font-body leading-relaxed max-w-xl">
+              <p className="text-lg sm:text-xl text-gray-400 font-body leading-relaxed max-w-xl">
                 Fleet logistics from one command layer. Lower idle time, fewer empty legs, and better placement decisions before demand peaks.
               </p>
               
-              <div className="mt-8 space-y-6">
+               <div className="mt-8 space-y-5 sm:space-y-6">
                 {/* Feature List */}
                 {[
                   { title: "Node Optimization", desc: "Automated routing algorithms target lower empty mileage in pilot operations." },

@@ -3,10 +3,10 @@ const Footer = () => {
     <footer className="relative border-t border-white/5 bg-[#050505] pt-16 md:pt-20 pb-8 overflow-hidden z-20 mt-auto">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-5xl h-px bg-gradient-to-r from-transparent via-cyber-blue/30 to-transparent" />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 pb-12 border-b border-white/5">
-          <div className="lg:col-span-5">
-            <a href="/" className="inline-flex items-center gap-3 group relative z-10">
+          <div className="lg:col-span-5 text-center lg:text-left">
+            <a href="/" className="inline-flex items-center gap-3 group relative z-10 justify-center lg:justify-start">
               <div className="relative flex items-center justify-center w-8 h-8 transition-transform duration-500 group-hover:scale-110">
                 <div className="absolute inset-0 bg-cyber-blue/20 blur-md rounded-full group-hover:bg-neon-purple/30 transition-colors duration-500" />
                 <svg viewBox="0 0 32 32" className="w-8 h-8 relative z-10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,7 +34,7 @@ const Footer = () => {
             </p>
           </div>
 
-          <nav className="lg:col-span-3" aria-label="Footer">
+          <nav className="lg:col-span-3 text-center lg:text-left" aria-label="Footer">
             <h4 className="text-white/70 font-display font-bold tracking-[0.18em] text-xs uppercase mb-4">Product</h4>
             <ul className="space-y-3 font-body text-sm">
               <li><a href="/#gatebound" className="text-gray-400 hover:text-cyber-blue transition-colors">Yield Engine</a></li>
@@ -46,13 +46,13 @@ const Footer = () => {
 
           <div className="lg:col-span-4 lg:pl-4">
             <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 backdrop-blur-md">
-              <h4 className="text-white font-display font-semibold text-lg">Ready to modernize fleet economics?</h4>
+              <h4 className="text-white font-display font-semibold text-lg text-center lg:text-left">Ready to modernize fleet economics?</h4>
               <p className="mt-2 text-gray-400 text-sm font-body leading-relaxed">
                 Join the early cohort shaping AI-native operations for ground mobility.
               </p>
               <a
                 href="/#waitlist"
-                className="mt-5 inline-flex items-center justify-center rounded-full bg-white text-[#050505] px-5 py-2.5 font-display font-bold text-xs tracking-[0.14em] uppercase hover:bg-cyber-blue transition-colors"
+                className="mt-5 inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-white text-[#050505] px-5 py-2.5 font-display font-bold text-xs tracking-[0.14em] uppercase hover:bg-cyber-blue transition-colors"
               >
                 Join Waitlist
               </a>

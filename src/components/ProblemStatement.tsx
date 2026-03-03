@@ -6,12 +6,12 @@ export default function ProblemStatement() {
   return (
     <section 
       ref={ref} 
-      className="relative flex flex-col items-center justify-center min-h-[60vh] px-6 py-32 bg-[#0a0a0a] overflow-hidden"
+      className="relative flex flex-col items-center justify-center min-h-[55vh] px-6 py-20 sm:py-28 md:py-32 bg-[#0a0a0a] overflow-hidden"
     >
       {/* Subtle Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] max-w-[800px] h-[400px] bg-cyber-blue/5 rounded-full blur-[120px] pointer-events-none"></div>
 
-      <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center gap-10">
+        <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center gap-8 sm:gap-10">
         
         {/* Neon Label */}
         <div 
@@ -38,7 +38,7 @@ export default function ProblemStatement() {
 
         {/* Supporting Subtext */}
         <p 
-          className={`max-w-2xl text-lg md:text-xl text-white/60 font-body leading-relaxed transition-all duration-700 delay-400 transform ${
+          className={`max-w-2xl text-base sm:text-lg md:text-xl text-white/60 font-body leading-relaxed transition-all duration-700 delay-400 transform ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >

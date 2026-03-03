@@ -132,7 +132,7 @@ export default function Hero() {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 text-center space-y-6 sm:space-y-8 max-w-5xl mx-auto p-4 sm:p-6 mt-20 sm:mt-16 w-full">
+      <div className="relative z-10 text-center space-y-5 sm:space-y-8 max-w-5xl mx-auto px-4 sm:px-6 pt-28 pb-12 sm:pb-8 sm:mt-16 w-full">
         
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mx-auto opacity-0 animate-fade-in-up shadow-[0_0_20px_rgba(0,240,255,0.05)]">
@@ -143,7 +143,7 @@ export default function Hero() {
         </div>
 
         {/* Headline */}
-        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-display font-extrabold tracking-tighter opacity-0 animate-fade-in-up animation-delay-100 leading-[1.1] sm:leading-[1.05] text-white px-2 sm:px-0">
+        <h1 className="text-[2.35rem] sm:text-5xl md:text-7xl lg:text-[5.5rem] font-display font-extrabold tracking-tight sm:tracking-tighter opacity-0 animate-fade-in-up animation-delay-100 leading-[1.12] sm:leading-[1.05] text-white px-1 sm:px-0">
           AI-First
           <br className="hidden sm:block" />
           <span className="relative inline-block mt-2 sm:mt-1">
@@ -165,7 +165,7 @@ export default function Hero() {
         <div
           id="waitlist"
           ref={waitlistRef}
-          className={`pt-6 sm:pt-8 opacity-0 animate-fade-in-up animation-delay-300 w-full max-w-md mx-auto px-4 sm:px-0 transition-all duration-500 ${waitlistHighlighted ? 'rounded-2xl ring-1 ring-cyber-blue/60 bg-cyber-blue/[0.03] shadow-[0_0_30px_rgba(0,240,255,0.25)]' : ''}`}
+          className={`pt-5 sm:pt-8 opacity-0 animate-fade-in-up animation-delay-300 w-full max-w-md mx-auto px-1 sm:px-0 transition-all duration-500 ${waitlistHighlighted ? 'rounded-2xl ring-1 ring-cyber-blue/60 bg-cyber-blue/[0.03] shadow-[0_0_30px_rgba(0,240,255,0.25)]' : ''}`}
         >
           <div className="relative group">
             {/* Animated border glow */}
@@ -199,7 +199,7 @@ export default function Hero() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email for early access..." 
-                  className="flex-grow w-full sm:w-auto bg-transparent text-white placeholder-gray-500 font-body px-5 py-3.5 outline-none disabled:opacity-50 text-sm md:text-base text-center sm:text-left"
+                  className="flex-grow w-full sm:w-auto bg-transparent text-white placeholder-gray-500 font-body px-5 py-3.5 outline-none disabled:opacity-50 text-sm md:text-base text-left"
                   required
                   disabled={status === 'loading'}
                 />
@@ -226,7 +226,7 @@ export default function Hero() {
           </div>
 
           {status === 'error' && errorMessage ? (
-            <p className="mt-4 text-xs text-red-400 font-body tracking-wide">{errorMessage}</p>
+            <p className="mt-3 text-sm sm:text-xs text-red-400 font-body tracking-wide text-left px-2">{errorMessage}</p>
           ) : null}
           
           <p className="text-xs text-gray-500 font-body mt-4 tracking-wide">

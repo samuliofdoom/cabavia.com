@@ -25,6 +25,15 @@
   html {
     scroll-behavior: smooth;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
   
   body {
     @apply bg-[#050505] text-white font-body antialiased; /* Deepened background slightly for better contrast */
@@ -52,5 +61,12 @@
   }
   ::-webkit-scrollbar-thumb:hover {
     background: rgba(0, 240, 255, 0.3);
+  }
+
+  @media (max-width: 640px) {
+    .bg-noise {
+      opacity: 0.018;
+      background-size: 180px;
+    }
   }
 }

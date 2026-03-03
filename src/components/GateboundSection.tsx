@@ -6,13 +6,13 @@ export default function GateboundSection() {
   const [viewMode, setViewMode] = useState<'ui' | 'api'>('ui');
 
   return (
-    <section 
+    <section
       id="gatebound"
       ref={ref} 
-      className="relative w-full py-24 md:py-32 overflow-hidden"
+      className="relative w-full py-20 sm:py-24 md:py-32 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+        <div className="flex flex-col lg:flex-row items-center gap-12 sm:gap-16 lg:gap-24">
           
           {/* Left Text Content */}
           <div className="w-full lg:w-1/2 space-y-8 relative z-10">
@@ -24,11 +24,11 @@ export default function GateboundSection() {
                 </span>
               </div>
               
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-5xl font-display font-extrabold tracking-tighter text-white mb-6">
+              <h2 className="text-3xl sm:text-5xl lg:text-6xl xl:text-5xl font-display font-extrabold tracking-tight sm:tracking-tighter text-white mb-6">
                 Meet <br className="block sm:hidden" /><span className="bg-gradient-to-r from-neon-purple to-cyber-blue bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(176,38,255,0.2)] whitespace-nowrap">Gatebound.</span>
               </h2>
               
-              <p className="text-xl text-gray-400 font-body leading-relaxed max-w-xl">
+              <p className="text-lg sm:text-xl text-gray-400 font-body leading-relaxed max-w-xl">
                 Improve margin on every transfer. Our dynamic pricing engine updates continuously from flight signals, local demand clusters, and fleet availability.
               </p>
               
@@ -172,7 +172,7 @@ export default function GateboundSection() {
                 </div>
 
                 {/* Floating UI Elements */}
-                <div className={`absolute top-1/4 right-6 z-10 p-5 rounded-2xl bg-gradient-to-br from-[#0a0a0a]/90 to-[#050505]/90 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] transition-all duration-700 delay-500 transform hover:scale-105 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                 <div className={`hidden sm:block absolute top-1/4 right-6 z-10 p-5 rounded-2xl bg-gradient-to-br from-[#0a0a0a]/90 to-[#050505]/90 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] transition-all duration-700 delay-500 transform hover:scale-105 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
                   {/* Subtle inner glow */}
                   <div className="absolute inset-0 rounded-2xl shadow-[inset_0_0_20px_rgba(176,38,255,0.05)] pointer-events-none"></div>
                   {/* Neon top accent line */}
@@ -195,7 +195,7 @@ export default function GateboundSection() {
                   </div>
                 </div>
 
-                <div className={`absolute bottom-6 left-6 z-10 p-4 rounded-xl bg-black/60 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] transition-all duration-700 delay-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
+                <div className={`hidden sm:block absolute bottom-6 left-6 z-10 p-4 rounded-xl bg-black/60 backdrop-blur-md border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] transition-all duration-700 delay-700 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}>
                   <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-cyber-blue rounded-l-xl shadow-[0_0_10px_rgba(0,240,255,0.8)]"></div>
                   <div className="flex items-center gap-4 pl-2">
                     <div className="relative w-10 h-10 rounded-full bg-cyber-blue/10 border border-cyber-blue/30 flex items-center justify-center shadow-[0_0_15px_rgba(0,240,255,0.2)]">
@@ -213,7 +213,7 @@ export default function GateboundSection() {
                 </div>
                   </>
                 ) : (
-                  <div className="absolute inset-0 bg-[#0a0a0a] p-6 overflow-auto font-mono text-sm leading-loose">
+                  <div className="absolute inset-0 bg-[#0a0a0a] p-4 sm:p-6 overflow-auto font-mono text-xs sm:text-sm leading-loose">
                     <pre className="text-gray-300">
 {`{
   `}<span className="text-cyber-blue">"endpoint"</span>{`: `}<span className="text-green-400">"/v1/yield/surge"</span>{`,
