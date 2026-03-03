@@ -59,8 +59,27 @@ export default function AboutSection() {
               <div className="absolute -left-6 top-0 bottom-0 w-px bg-gradient-to-b from-cyber-blue via-cyber-blue/20 to-transparent hidden lg:block"></div>
               
               <p className="text-gray-400 font-body text-lg md:text-xl leading-relaxed mb-10">
-                Founded by industry veterans who saw firsthand how manual dispatch and static pricing were destroying margins. We are backed by world-class infrastructure to bring airline-grade intelligence to every transfer operator.
+                CabAvia is built by a founding team with experience across mobility operations, pricing systems, and applied AI. We focus on helping transfer operators run tighter dispatch, improve utilization, and scale reliably.
               </p>
+
+              <div className="mb-10 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm font-body">
+                <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+                  <p className="text-white/50 uppercase tracking-[0.14em] text-[11px]">Company</p>
+                  <p className="mt-1 text-white/85">CabAvia</p>
+                </div>
+                <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+                  <p className="text-white/50 uppercase tracking-[0.14em] text-[11px]">Stage</p>
+                  <p className="mt-1 text-white/85">Pre-funded product startup</p>
+                </div>
+                <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+                  <p className="text-white/50 uppercase tracking-[0.14em] text-[11px]">Focus</p>
+                  <p className="mt-1 text-white/85">Airport transfer and chauffeur operators</p>
+                </div>
+                <div className="rounded-xl border border-white/10 bg-white/[0.02] p-4">
+                  <p className="text-white/50 uppercase tracking-[0.14em] text-[11px]">Contact</p>
+                  <p className="mt-1 text-white/85">hello@cabavia.com</p>
+                </div>
+              </div>
 
               <div className="mb-10 rounded-2xl border border-cyber-blue/25 bg-cyber-blue/[0.04] p-5">
                 <p className="text-xs tracking-[0.18em] uppercase font-display font-semibold text-cyber-blue">Built on Google Cloud</p>
